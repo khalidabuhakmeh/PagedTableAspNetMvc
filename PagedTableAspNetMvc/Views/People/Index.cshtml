@@ -1,50 +1,35 @@
 ﻿@using PagedList.Mvc
 @model PagedTableAspNetMvc.Models.IndexModel
 
-@{
-    Layout = null;
-}
+<div class="col-md-12">
+    <a href="@Url.Action("New")" class="btn btn-success">
+        <i class="glypicon glyphicon-plus"></i>
+        Add New
+    </a>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-</head>
-<body>
-    <div class="container">
-        <div class="col-md-12">
-            @Html.PagedListPager(Model.People, page => Url.Action("index", new { page }))
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var person in Model.People)
-                    {
-                        <tr>
-                            <td>@person.Id</td>
-                            <td>@person.FullName</td>
-                            <td>@person.Phone</td>
-                            <td>@person.Email</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-            @Html.PagedListPager(Model.People, page => Url.Action("index", new { page }))
-        </div>
-    </div>
-</body>
-</html>
+    @Html.PagedListPager(Model.People, page => Url.Action("index", new { page }))
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var person in Model.People)
+            {
+                <tr>
+                    <td>@person.Id</td>
+                    <td>@person.FullName</td>
+                    <td>@person.Phone</td>
+                    <td>@person.Email</td>
+                    <td><a href="@Url.Action("Edit", new { person.Id })">Edit</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @Html.PagedListPager(Model.People, page => Url.Action("index", new { page }))
+</div>

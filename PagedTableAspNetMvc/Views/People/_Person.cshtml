@@ -1,0 +1,32 @@
+﻿@model PagedTableAspNetMvc.Models.EditModel
+
+@Html.AntiForgeryToken()
+@Html.ValidationSummary(true)
+
+<fieldset>
+    <legend>Person</legend>
+
+    @Html.HiddenFor(m => m.Id)
+    <div class="form-group">
+        @Html.LabelFor(model => model.FullName)
+        @Html.TextBoxFor(model => model.FullName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.FullName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Phone)
+        @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Phone)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+
+    <p>
+        <input class="btn" type="submit" value="Save Changes" />
+        <a href="@Url.Action("Index")" class="pull-right"> Back To List</a>
+    </p>
+</fieldset>

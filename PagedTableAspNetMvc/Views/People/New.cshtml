@@ -1,0 +1,11 @@
+﻿@model PagedTableAspNetMvc.Models.EditModel
+
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>New</h2>
+
+@using (Html.BeginForm("Create", "People", FormMethod.Post, new { role = "form" })) {
+    @Html.Partial("_Person")
+}

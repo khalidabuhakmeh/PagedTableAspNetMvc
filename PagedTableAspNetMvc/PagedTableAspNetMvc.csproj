@@ -125,6 +125,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\EditModel.cs" />
     <Compile Include="Models\ExampleDataContext.cs" />
     <Compile Include="Models\SearchModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,6 +153,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\People\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\People\New.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\People\_Person.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\People\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_viewstart.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
